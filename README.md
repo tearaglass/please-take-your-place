@@ -1,5 +1,7 @@
 # PLEASE TAKE YOUR PLACE
 
+**[Play the artwork](https://tearaglass.github.io/please-take-your-place/)**
+
 A compact, original interactive web artwork. Five empty seats are held together by the comments on a two-minute home recording.
 
 ## Run
@@ -50,3 +52,17 @@ One Three.js dependency, Vite for development/build, vanilla JS/CSS. No framewor
 The compact rendering deliberately retains angular furniture and a compressed-video look. Ambient sound is a synthesized approximation, not recorded foley. The spatial breach is a fading wall with crossing wires; comment art is deliberately typographic. `window.artwork.snapshot()` provides read-only playback, role, audio and renderer diagnostics.
 
 See TESTING.md for what was actually verified. No physical iPhone or M1 performance benchmark was run.
+
+## GitHub Pages
+
+The public site is served from the root of the `gh-pages` branch. Source code remains on `main`.
+
+To prepare an updated Pages build:
+
+```sh
+npm ci
+npm test
+npm run build -- --base=/please-take-your-place/
+```
+
+Publish the contents of `dist/` to the root of `gh-pages`, retaining an empty `.nojekyll` file. GitHub automatically deploys commits to that branch. Source changes on `main` alone do not update the published site.
